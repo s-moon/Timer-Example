@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Timer - www.logicalmoon.com</title>
+		<link rel="stylesheet" type="text/css" href="timer.css">
+	</head>
+	<body>
+		<h1>Timer Example - Javascript</h1>
+		<div class="timer">
+			<span id="minutes">0</span> minute(s) 
+			<span id="seconds">0</span> seconds.
+		</div>
+		<input type="button" value="START" onclick="startTimer()"></input>
+		<input type="button" value="STOP" onclick="stopTimer()"></input>
+		<hr/>
+		<footer>
+			<p>Created by Stephen Moon 2015</p>
+			<p><a href="http://www.logicalmoon.com">http://www.logicalmoon.com</a></p>
+		</footer>
+		<script type="text/javascript">
+			function startTimer() {
+				var seconds = 0;
+				timer = setInterval(function() {
+					seconds ++;
+					document.getElementById("seconds").innerText = seconds % 60;
+					document.getElementById("minutes").innerText = parseInt(seconds / 60);
+				}, 1000);
+			}
+			
+			function stopTimer() {
+				clearInterval(timer);
+			}
+		</script>
+	</body>
+
+</html>
